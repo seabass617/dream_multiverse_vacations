@@ -6,9 +6,9 @@
   
   @keyframes glow {
 	from {
-	  text-shadow: 0 0 10px $dark-khaki, 0 0 20px $dark-khaki, 0 0 30px $yellow-green, 0 0 40px $yellow-green;
+	  text-shadow: 0 0 10px $dark-khaki, 0 0 20px $yellow-green, 0 0 30px $green-yellow, 0 0 40px $spanish-green;
 	}
 	to {
-	  text-shadow: 0 0 20px $dark-khaki, 0 0 30px $green-yellow, 0 0 40px $green-yellow, 0 0 50px $green-yellow;
+	  text-shadow: 0 0 20px $yellow-green, 0 0 30px $yellow-green, 0 0 40px $green-yellow, 0 0 50px $spanish-green;
 	}
   }
