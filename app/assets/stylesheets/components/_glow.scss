@@ -1,0 +1,14 @@
+.glow {
+	font-size: 80px;
+	text-align: center;
+	animation: glow .5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+	from {
+	  text-shadow: 0 0 10px $dark-khaki, 0 0 20px $dark-khaki, 0 0 30px $yellow-green, 0 0 40px $yellow-green;
+	}
+	to {
+	  text-shadow: 0 0 20px $dark-khaki, 0 0 30px $green-yellow, 0 0 40px $green-yellow, 0 0 50px $green-yellow;
+	}
+  }

@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.header {
+    background-color: $spanish-green;
+    color: $bone;
+    padding: 30px;
+}
+
+.header h1{
+    font-family: $rick-font;
+    color: $pacific-blue;
+    -webkit-text-stroke: 1px $gray;
+}
