@@ -8,6 +8,12 @@
 require 'open-uri'
 require 'nokogiri'
 
+puts "destroying all users and dimensions..."
+User.destroy_all
+Dimension.destroy_all
+
+puts "Instances destroyed... Creating new Users..."
+
 user_rick = User.new
 user_rick.email = 'rick@c137.com'
 user_rick.first_name = "Rick"
@@ -52,6 +58,7 @@ user_jerry.password = '123456'
 user_jerry.password_confirmation = '123456'
 user_jerry.save!
 
+puts "users created... scraping for dimensions..."
 
 url = "https://rickandmorty.fandom.com/wiki/Category:Dimensions"
 html = Nokogiri::HTML(open(url).read)
@@ -81,3 +88,4 @@ html.search(".category-page__member-link").each do |e|
     user_id: (1..5).to_a.sample
   )
 end
+puts "all set"
