@@ -1,0 +1,33 @@
+.form-control{
+    border-radius: 20px;
+    border:none;
+    opacity: 40%;
+}
+
+.form-control:focus{
+    border:none;
+    box-shadow: none;
+    opacity: 60%;
+}
+
+.btn {
+    color: $bone;
+    border: 1px solid $bone;
+    margin: 10px 0px 20px 0px;
+    opacity: 70%;
+}
+
+.btn:hover {
+    opacity: 1;
+    color: inherit;
+    animation: hvr-buzz .15s linear infinite;
+}
+
+@keyframes hvr-buzz {
+    50% {
+        transform: translateX(3px) rotate(2deg);
+    }
+    100% {
+        transform: translateX(-3px) rotate(-2deg);
+    }
+}

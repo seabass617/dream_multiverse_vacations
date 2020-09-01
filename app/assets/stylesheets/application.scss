@@ -12,14 +12,23 @@
 @import "components/index";
 @import "pages/index";
 
-.header {
-    background-color: $spanish-green;
+.header{
+    // background-color: $spanish-green;
     color: $bone;
     padding: 30px;
 }
 
-.header h1{
+.header h1 a{
     font-family: $rick-font;
     color: $pacific-blue;
     -webkit-text-stroke: 1px $gray;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    color: $yellow-green;
+    text-decoration: none;
 }
