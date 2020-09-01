@@ -14,7 +14,7 @@ class DimensionsController < ApplicationController
     end
     
 
-    def show 
+    def show
         @dimension = Dimension.find(params[:id])
     end     
 

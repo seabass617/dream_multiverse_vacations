@@ -2,6 +2,7 @@
   <h1 class="text-center">Browse through the dimensions...</h1>
   <div class="cards">
     <% @dimensions.each do |dimension| %>
+    <%= link_to dimension do %>
     <div class="card-trip">
       <img
         src=<%= dimension.photo %> />
@@ -15,6 +16,7 @@
         <p><em><%= dimension.user.first_name %></em></p>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
