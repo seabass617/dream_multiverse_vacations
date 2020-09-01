@@ -3,9 +3,10 @@
 
 
 body { 
-  background-image: url(homepage_background_cats.jpg);
+  background-image: asset-url('homepage_background_cats.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
+  color: $bone;
   
 }
 
