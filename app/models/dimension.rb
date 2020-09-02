@@ -4,6 +4,6 @@ class Dimension < ApplicationRecord
 
 
     validates :name, presence: true
-    validates :description, presence: true
+    #validates :description, presence: true
     #validates :booking_id, uniqueness: { scope: :dimension_id }
 end 
