@@ -1,4 +1,6 @@
 class DimensionsController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
+
     def index
         @dimensions = Dimension.all
     end    
@@ -12,10 +14,10 @@ class DimensionsController < ApplicationController
        @dimension.user = current_user
        @dimension.save
     end
-    
 
     def show
         @dimension = Dimension.find(params[:id])
+        authorize @dimension
     end     
 
     def dimension_params
