@@ -1,16 +1,24 @@
-
 <div class="container">
-  <div class="row">
-    <% dimensions.each do |dimension| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=827&q=80');">
-          <div class="card-description">
-            <h2><%= dimension.name %></h2>
-          </div>
-          <%= link_to "", dimension_path(dimension), class: 'card-link' %>
+  <h1 class="text-center">Browse through the dimensions...</h1>
+  <div class="cards">
+    <% @dimensions.each do |dimension| %>
+    <%= link_to dimension do %>
+    <div class="card-trip">
+      <img
+        src=<%= dimension.photo %> />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= dimension.name %></h2>
+          <p><%= dimension.description %></p>
         </div>
+        <h2 class="card-trip-pricing"><%= dimension.price %></h2>
+        <img src=<%= dimension.user.photo %> class="card-trip-user avatar-bordered">
+        <p><em><%= dimension.user.first_name %></em></p>
       </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
 </div>
-<%= link_to 'Create a new dimension', new_dimension_path %>
+
+<%= link_to 'Create a new dimension', new_dimension_path, class: "button" %>
