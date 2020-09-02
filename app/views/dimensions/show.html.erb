@@ -1,17 +1,16 @@
 
-<div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=827&q=80');">
-          <div class="card-description">
-            <h2><%= @dimension.name %></h2>
-          </div>
-          <%= if current_user == @dimension.user %>
-           <%= link_to "", dimension_booking_index_path(@dimension), class: 'card-link' %>
-           <%= else %>
-           <h2>Hello World</h2>
-           <% end %>
-        </div>
-      </div>
-
-if current_user == @dimension.user   
-
+<div class="container">
+  <h2><%= @dimension.name %></h2>
+  <div class="card-trip" style="background-image: url(<%= @dimension.photo %>);">
+    <div class="card-description">
+    </div>
+    
+    <% if current_user == @dimension.user %>
+      <%= link_to "hey", dimension_booking_index_path(@dimension), class: 'card-link' %>
+    <% else %>
+      <h2>Hello World</h2>
+    <% end %>
+  </div>
+    <%= link_to "Back", dimensions_path, class: "button"  %>
+</div>
 

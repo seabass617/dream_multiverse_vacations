@@ -20,6 +20,7 @@ user_rick.first_name = "Rick"
 user_rick.last_name = "Sanchez"
 user_rick.password = '123456'
 user_rick.password_confirmation = '123456'
+user_rick.photo = 'https://banner2.cleanpng.com/20190111/fci/kisspng-rick-sanchez-clip-art-telegram-illustration-sticke-telegram-ampq-5c38a02c3ff6e4.644130331547214892262.jpg'
 user_rick.save!
 
 
@@ -29,6 +30,7 @@ user_morty.first_name = "Morty"
 user_morty.last_name = "Smith"
 user_morty.password = '123456'
 user_morty.password_confirmation = '123456'
+user_morty.photo = 'https://img2.gratispng.com/20180806/vws/kisspng-snout-clip-art-sticker-forehead-sticker-telegram-snout-clip-art-others-512-512-t-5b690d719335d4.319521641533611377603.jpg'
 user_morty.save!
 
 
@@ -38,6 +40,7 @@ user_beth.first_name = "Beth"
 user_beth.last_name = "Smith"
 user_beth.password = '123456'
 user_beth.password_confirmation = '123456'
+user_beth.photo = 'https://vignette.wikia.nocookie.net/ipdkverse/images/c/cb/Beth_Smith_1.png/revision/latest?cb=20190925220530'
 user_beth.save!
 
 
@@ -47,6 +50,7 @@ user_summer.first_name = "Summer"
 user_summer.last_name = "Smith"
 user_summer.password = '123456'
 user_summer.password_confirmation = '123456'
+user_summer.photo = 'https://n7.nextpng.com/sticker-png/356/323/sticker-png-rick-sanchez-morty-smith-summer-smith-pocket-mortys-character-bolsonaro-purple-child-face-violet.png'
 user_summer.save!
 
 
@@ -56,6 +60,7 @@ user_jerry.first_name = "Jerry"
 user_jerry.last_name = "Smith"
 user_jerry.password = '123456'
 user_jerry.password_confirmation = '123456'
+user_jerry.photo = 'https://www.pngfind.com/pngs/m/344-3446247_rick-and-morty-clipart-jerry-jerry-rick-and.png'
 user_jerry.save!
 
 puts "users created... scraping for dimensions..."
