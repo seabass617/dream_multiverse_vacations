@@ -12,6 +12,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header">
+      <h1 class="glow"><%= link_to 'Dream Multiverse Vacation', '/' %> <h1>
+    </div>
+    <div class="container">
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/navbar' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

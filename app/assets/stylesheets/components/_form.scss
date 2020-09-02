@@ -1,0 +1,22 @@
+//--------- INPUT TYPE ---------//
+
+.form-control{
+    border-radius: 20px;
+    border:none;
+    opacity: 40%;
+}
+
+.form-control:focus{
+    font-weight: bolder;
+    border:none;
+    box-shadow: none;
+    opacity: 80%;
+}
+
+textarea.form-control {
+    border-radius: 50px;
+    padding-left: 20px;
+}
+
+//--------- CHECKBOX ---------//
+//--------- SLIDE ---------//

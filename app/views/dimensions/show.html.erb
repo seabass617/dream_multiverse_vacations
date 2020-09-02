@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h2><%= @dimension.name %></h2>
+  <div class="card-trip" style="background-image: url(<%= @dimension.photo %>);">
+    <div class="card-description">
+    </div>
+    
+    <% if current_user == @dimension.user %>
+      <%= link_to "hey", dimension_booking_index_path(@dimension), class: 'card-link' %>
+    <% else %>
+      <h2>Hello World</h2>
+    <% end %>
+  </div>
+    <%= link_to "Back", dimensions_path, class: "button"  %>
+</div>
+

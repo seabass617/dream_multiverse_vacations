@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+
+
+
+body { 
+  background-image: asset-url('homepage_background_cats.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  color: $bone;
+  
+}
+
+h1 {
+  color: $yellow-green; 
+}
+
