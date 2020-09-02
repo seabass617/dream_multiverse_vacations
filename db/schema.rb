@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_155410) do
+ActiveRecord::Schema.define(version: 2020_09_01_195435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "bookings", force: :cascade do |t|
     t.integer "trip_duration"
@@ -27,6 +26,11 @@ ActiveRecord::Schema.define(version: 2020_09_01_155410) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "components", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "dimensions", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_155410) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_dimensions_on_user_id"
   end
 
@@ -44,11 +49,6 @@ ActiveRecord::Schema.define(version: 2020_09_01_155410) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
-  end
-
-  create_table "components", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
