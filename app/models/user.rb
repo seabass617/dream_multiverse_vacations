@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings
   validates :first_name, presence: true
   validates :last_name, presence: true
+  has_one_attached :photo
 end
