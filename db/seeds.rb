@@ -86,11 +86,11 @@ html.search(".category-page__member-link").each do |e|
     dimension_description = Nokogiri::HTML(open(dimension_page).read).at(".pi-data-value.pi-font").text.strip
   end
 
-  Dimension.create(
+  Dimension.create!(
     name: e.text.strip,
     photo: images_url,
     description: dimension_description,
-    user_id: (1..5).to_a.sample
+    user_id: User.all.sample.id
   )
 end
 puts "all set"

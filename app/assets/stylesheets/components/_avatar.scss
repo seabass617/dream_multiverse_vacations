@@ -2,6 +2,8 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  background-color: $bone;
+  object-fit: cover;
 }
 
 .avatar-small {
@@ -9,6 +11,8 @@
   height: 50px;
   border-radius: 50%;
   box-shadow: 2px 2px $pacific-blue;
+  background-color: $bone;
+  object-fit: cover;
 }
 
 .avatar-rotation {
