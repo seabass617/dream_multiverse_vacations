@@ -27,6 +27,31 @@ class DimensionsController < ApplicationController
     end
 
 
+    def edit 
+        @dimension = Dimension.find(params[:id])
+        authorize @dimension
+    end
+
+    def update
+        @dimension = Dimension.find(params[:id])
+       @dimension.update(dimension_params)
+       authorize @dimension
+       if @dimension.save
+        redirect_to dimension_path(@dimension), notice: 'Your Dimension was successfully updated.'
+       else
+        render :new
+
+    end 
+
+
+
+    def destroy 
+        @dimension = Dimension.find(params[:id])
+        @dimension.destroy
+        redirect_to dimensions_path
+    end 
+
+
 
     def show
         @dimension = Dimension.find(params[:id])
