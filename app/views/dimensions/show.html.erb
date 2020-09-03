@@ -1,16 +1,31 @@
+<div class="container" style="margin: 50px 0px;background-color:rgba(18,176,201,0.2);border-radius:10px;padding:10px 20px">
 
-<div class="container">
-  <h2><%= @dimension.name %></h2>
-  <div class="card-trip" style="background-image: url(<%= @dimension.photo %>);">
-    <div class="card-description">
+  <h1 style="text-align:right"><%= @dimension.name %></h1>
+  
+  <div style="display: flex;justify-content: space-between">
+
+    <div class="seller" style="margin-right:20px">
+      <img src=<%= @dimension.user.photo %> class="avatar-large">
+      <p><strong>Seller:</strong><br>
+      <em><%= @dimension.user.first_name %> <%= @dimension.user.last_name %></em></p>
+      <br>
+      <h1>$ <%= @dimension.price %></h1> 
     </div>
-    
-    <% if current_user == @dimension.user %>
-      <%= link_to "hey", dimension_booking_index_path(@dimension), class: 'card-link' %>
-    <% else %>
-      <h2>Hello World</h2>
-    <% end %>
-  </div>
-    <%= link_to "Back", dimensions_path, class: "button"  %>
-</div>
 
+    <div style="flex-grow:1">
+      <img src=<%= @dimension.photo %> style="width: 100%;height:300px;border-radius: 20px"/>
+    </div>
+
+  </div>
+
+  <div style="border-top: solid 1px white;padding-top: 20px;margin-top: 50px">
+      <h4>Description:</h4>
+      <p>That's Right Morty! This is gonna be a lot like that. Except you know. It's gonna make sense. 'Quantum carburetor'? Jesus, Morty. You can't just add a Sci-Fi word to a car word and hope it means something... Huh, looks like something's wrong with the microverse battery. We're gonna have to go inside.</p>
+  </div>
+
+  <div style="display: flex;justify-content: space-between">
+      <button class="btn"><%= link_to "Back", dimensions_path %>
+      <button class="btn"><%= link_to "Book", new_dimension_booking_path(@dimension.id) %>
+  </div>
+
+</div>
