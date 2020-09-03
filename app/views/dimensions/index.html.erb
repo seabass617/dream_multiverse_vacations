@@ -6,15 +6,14 @@
     <% @dimensions.each do |dimension| %>
     <%= link_to dimension do %>
     <div class="card-trip">
-      <img
-        src= <%= dimension.photo %> />
+      <%= cl_image_tag(dimension.photo.key) %>
       <div class="card-trip-infos">
         <div>
           <h2><%= dimension.name %></h2>
           <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
           <%# <p><%= dimension.description %></p>
         </div>
-        <img src=<%= dimension.user.photo %> class="card-trip-user avatar-small">
+        <%= cl_image_tag(dimension.user.photo.key, options= {class: "card-trip-user avatar-small"}) %>
         <p><em><%= dimension.user.first_name %></em></p>
       </div>
     </div>
