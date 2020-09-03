@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :destroy]   
   get '/mybookings', to: 'bookings#index'
+
 end
