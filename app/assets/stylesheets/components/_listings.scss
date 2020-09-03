@@ -1,0 +1,16 @@
+.booking-container {
+  display: flex;
+  background: rgba($color: #000000, $alpha: 0.9);
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 2px solid rgba($color: $bone, $alpha: 0.4);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+// for the page title
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
