@@ -9,9 +9,8 @@
       <p><strong>Seller:</strong><br>
       <em><%= @dimension.user.first_name %> <%= @dimension.user.last_name %></em></p>
       <br>
-      <h1>$$$$</h1> 
+      <h1>$ <%= @dimension.price %></h1> 
     </div>
-
 
     <div style="flex-grow:1">
       <img src=<%= @dimension.photo %> style="width: 100%;height:300px;border-radius: 20px"/>
