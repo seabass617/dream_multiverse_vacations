@@ -23,9 +23,6 @@
   position: absolute;
 }
 
-// #navbarDropdown {
-//   position: unset;
-// }
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
@@ -77,3 +74,13 @@
     }
   }
 }
+
+.dropdown-menu {
+  background: linear-gradient(rgba(89, 122, 128, 0.2),  rgba(18,176,201,1));
+}
+
+.dropdown-item {
+  color: $green-yellow;
+}
+
+
