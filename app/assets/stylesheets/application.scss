@@ -32,3 +32,21 @@ a:hover{
     color: $yellow-green;
     text-decoration: none;
 }
+
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+.call-to-action {
+  
+  --fill-color: #D2E054; //webkit doesn't take scss variable I guess???  get's buggy...
+  padding: 4px 0;
+  font: 700 2rem Raleway, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--fill-color);
+  background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+  color: transparent;
+  background-clip: text;
+  margin-top: 30px;
+  margin-bottom: 75px;
+
+}

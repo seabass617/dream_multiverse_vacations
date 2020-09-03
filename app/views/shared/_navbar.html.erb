@@ -1,9 +1,11 @@
+<% if user_signed_in? %>
+
 <div class="menu-bar">
 
   <%# navigation items %>
   <div class ="navigation">
     <ul id = "navigation-ul">
-      <% if user_signed_in? %>
+      
       <li class = "navigation-li"><a href="#">home</a></li>
       <li class = "navigation-li"><%= link_to "my bookings", mybookings_path %></li>
       <li class = "navigation-li"><a href="#">about</a></li>
@@ -21,16 +23,16 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
       </li>
-      <% else %>
-      <li class="nav-item" id="login">
-          <%= link_to new_user_session_path do %>
-            <i class="fas fa-user-astronaut"></i> Login
-          <%end%>
-      </li>
-      <%end%>
     </ul>
   </div>
 </div>
+<% else %>
+  <li class="nav-item" id="login">
+  <%= link_to new_user_session_path do %>
+    <i class="fas fa-user-astronaut"></i> Login
+  <%end%>
+  </li>
+<%end%>
 
 
 
