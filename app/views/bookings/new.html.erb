@@ -1,4 +1,10 @@
- <%#= simple_form_for @booking do |f| %>
-   <%#= f.input :trip_duration %>
- <%#= f.submit %>
- <%# end %>
+
+<h1>Bookings</h1>
+<p>Here are your dimensions:</p>
+
+
+<%= simple_form_for [@dimension, @booking] do |f| %>
+  <%= f.input :trip_duration, placeholder: "How much time?", label: "Quantity" %>
+  <%= f.button :submit, :class => "btn btn-primary" %>
+<% end %>
+
