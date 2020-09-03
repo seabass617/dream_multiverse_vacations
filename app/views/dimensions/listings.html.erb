@@ -1,0 +1,28 @@
+ <h1 class="text-center title">Your current dimension listings</h1>
+ <div class="btn">Create a new dimension vacation!</div>
+<%# ************ NOTE *********************** %>
+<%# The class names are titled booking because this listing style is essentially %>
+<%# the same as looking at your bookings %>
+<%# ***************************************** %>
+<div class="bookings-container">
+ 
+  
+  <% @dimensions.each do |dimension|%>
+    
+    <div class="booking-container"> 
+ 
+      <div class="booking-info">
+        <h2><%= dimension.name%></h2>
+        <h3><%= dimension.description %></h3>
+        <h3><%= link_to 'Edit Dimension', edit_dimension_path(dimension) %></h3>
+        <h3><%= link_to 'Remove Dimension', listings_path(dimension), method: :delete, data: { confirm: 'Are you certain you want to delete this dimension?'} %></h3>
+      </div>
+      
+      <img src= <%= dimension.photo %> />
+    </div>
+ 
+  <%end%>
+ 
+</div>
+
+<%= link_to "back", dimensions_path %>
