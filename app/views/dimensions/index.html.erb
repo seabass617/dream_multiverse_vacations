@@ -9,9 +9,9 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= dimension.name %></h2>
-          <p><%= dimension.description %></p>
+          <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
+          <%# <p><%= dimension.description %></p>
         </div>
-        <h2 class="card-trip-pricing"><%= dimension.price %></h2>
         <img src=<%= dimension.user.photo %> class="card-trip-user avatar-small">
         <p><em><%= dimension.user.first_name %></em></p>
       </div>
