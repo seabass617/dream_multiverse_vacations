@@ -20,18 +20,47 @@ class DimensionsController < ApplicationController
        @dimension.user = current_user
        authorize @dimension
        if @dimension.save
-        redirect_to @dimension, notice: 'dimension was successfully created.'
+        redirect_to @dimension, notice: 'Your dimension was successfully created.'
        else
         render :new
        end
     end
+
+
+    def edit 
+        @dimension = Dimension.find(params[:id])
+        authorize @dimension
+    end
+
+    def update
+       @dimension = Dimension.find(params[:id])
+       @dimension.update(dimension_params)
+       authorize @dimension
+       if @dimension.save
+        redirect_to dimension_path(@dimension), notice: 'Your dimension was successfully updated.'
+       else
+        render :new
+       end 
+    end 
+
+
+
+    def destroy 
+        @dimension = Dimension.find(params[:id])
+        @dimension.destroy
+        redirect_to dimensions_path
+    end 
+
+
 
     def show
         @dimension = Dimension.find(params[:id])
         authorize @dimension
     end     
 
+
+    private
     def dimension_params
-        params.require(:dimension).permit(:name, :description)
+        params.require(:dimension).permit(:name, :description, :photo)
     end    
 end
