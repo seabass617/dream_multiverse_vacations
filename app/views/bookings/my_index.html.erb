@@ -1,0 +1,32 @@
+<%# This index page is designer for a buyer, will only render their bookings (won't show if they've posted any listings) %>
+
+<h1 class="text-center">Here are all your bookings</h1>
+
+<%# bookings container is going to hold all the bookings %>
+<div class="bookings-container">
+
+  <%# render each booking card %>
+  <% @bookings.each do |booking|%>
+    <%# this booking container is going to be a flexbox with info on the left & image on the right %>
+    <div class="booking-container"> 
+
+      <div class="booking-info">
+        <h2>Booking for <%booking.dimension.name%></h2>
+        <h3>Duration: <% "#{booking.duration.to_s}" %></h3>
+        <%# there will be an error below due to the path %>
+        <h3><%= link_to "Cancel Booking", bookings_path(booking.id), method: :delete%></h3>
+      </div>
+
+
+      <img src= <%= booking.dimension.photo %> />
+
+    </div>
+
+  <%end%>
+
+</div>
+
+
+<%# booking for: dimension %>
+<%# Dates for trip %>
+<%# Dimension photo %>
