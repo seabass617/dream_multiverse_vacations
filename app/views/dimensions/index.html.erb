@@ -1,5 +1,7 @@
 <div class="container">
-  <h1 class="text-center">Browse through the dimensions...</h1>
+  <%unless user_signed_in?%>
+  <h1 class="text-center call-to-action">Browse through our wonderful selection of dimensions!</h1>
+  <%end%>
   <div class="cards">
     <% @dimensions.each do |dimension| %>
     <%= link_to dimension do %>
@@ -9,9 +11,9 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= dimension.name %></h2>
-          <p><%= dimension.description %></p>
+          <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
+          <%# <p><%= dimension.description %></p>
         </div>
-        <h2 class="card-trip-pricing"><%= dimension.price %></h2>
         <img src=<%= dimension.user.photo %> class="card-trip-user avatar-small">
         <p><em><%= dimension.user.first_name %></em></p>
       </div>
