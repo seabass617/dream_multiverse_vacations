@@ -12,13 +12,16 @@
       
   <%# avatar %>
       <li class="nav-item dropdown">
-          <% if current_user.photo.present? %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <img src="https://res.cloudinary.com/cassiaveliz/image/upload/v1599165302/user_none.png" 
+                  class="avatar-small" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <% end %>
 
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "View profile", user_path(current_user.id), class: "dropdown-item" %>
+            <%= link_to "Edit profile", edit_user_registration_path(current_user.id), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
       </li>
