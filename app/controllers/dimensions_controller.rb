@@ -5,14 +5,20 @@ class DimensionsController < ApplicationController
         @dimensions = Dimension.all
     end    
 
-    def new 
+    def new
         @dimension = Dimension.new
+        authorize @dimension
     end 
 
     def create 
        @dimension = Dimension.new(dimension_params)
        @dimension.user = current_user
-       @dimension.save
+       authorize @dimension
+       if @dimension.save
+        redirect_to @dimension, notice: 'dimension was successfully created.'
+       else
+        render :new
+       end
     end
 
     def show

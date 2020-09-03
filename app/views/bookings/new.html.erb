@@ -1,6 +1,8 @@
-<%= render "dimension_id/booking" %>
 <h1>Bookings</h1>
 <p>Here are your dimensions:</p>
-<% @Bookings.each do |booking| %>
-  <%= render partial: "booking", locals: { booking:booking } %>
+
+
+<%= simple_form_for [@dimension, @booking] do |f| %>
+  <%= f.input :trip_duration, placeholder: "How much time?", label: "Quantity" %>
+  <%= f.button :submit, :class => "btn btn-primary" %>
 <% end %>
