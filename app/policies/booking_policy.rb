@@ -1,5 +1,4 @@
-class DimensionPolicy < ApplicationPolicy
-
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -9,19 +8,14 @@ class DimensionPolicy < ApplicationPolicy
   def show?
     true
   end
-
+  
   def new?
-    true
+    record.dimension.user != user
   end
-
+  
   def create?
-    true
+    new?
   end
-  
-  def listings?
-    update?
-  end
-  
 
   def edit?
     update?
@@ -34,5 +28,5 @@ class DimensionPolicy < ApplicationPolicy
   def destroy?
     update?
   end
-  
+
 end
