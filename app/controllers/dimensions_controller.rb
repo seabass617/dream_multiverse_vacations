@@ -3,7 +3,12 @@ class DimensionsController < ApplicationController
 
     def index
         @dimensions = Dimension.all
-    end    
+    end   
+    
+    def listings
+        @dimensions = Dimension.where("user_id = ?", current_user.id )
+    end
+    
 
     def new
         @dimension = Dimension.new

@@ -18,6 +18,13 @@ class DimensionPolicy < ApplicationPolicy
     true
   end
   
+<<<<<<< HEAD
+=======
+  def listings?
+    update?
+  end
+  
+>>>>>>> master
 
   def edit?
     update?

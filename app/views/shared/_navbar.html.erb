@@ -6,14 +6,24 @@
   <div class ="navigation">
     <ul id = "navigation-ul">
       
+<<<<<<< HEAD
       <li class = "navigation-li"><a href="#">home</a></li>
       <li class = "navigation-li"><%= link_to "my bookings", mybookings_path %></li>
       <li class = "navigation-li"><a href="#">about</a></li>
+=======
+      <li class = "navigation-li"><%= link_to "home", root_path %></li>
+      <li class = "navigation-li"><%= link_to "my bookings", bookings_path %></li>
+      <li class = "navigation-li"><a href="#">my listings</a></li>
+>>>>>>> master
       
       
   <%# avatar %>
       <li class="nav-item dropdown">
+<<<<<<< HEAD
           <% if current_user.photo.present? %>
+=======
+          <% if current_user.photo.attached? %>
+>>>>>>> master
           <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
 

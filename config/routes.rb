@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :destroy]   
-  get '/mybookings', to: 'bookings#my_index'
+  get '/mybookings', to: 'bookings#index'
+
 end
