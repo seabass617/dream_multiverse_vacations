@@ -18,6 +18,10 @@ class DimensionPolicy < ApplicationPolicy
     true
   end
   
+  def listings?
+    update?
+  end
+  
 
   def edit?
     update?
