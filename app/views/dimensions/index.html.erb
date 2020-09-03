@@ -1,5 +1,7 @@
 <div class="container">
-  <h1 class="text-center">Browse through the dimensions...</h1>
+  <%unless user_signed_in?%>
+  <h1 class="text-center call-to-action">Browse through our wonderful selection of dimensions!</h1>
+  <%end%>
   <div class="cards">
     <% @dimensions.each do |dimension| %>
     <%= link_to dimension do %>
