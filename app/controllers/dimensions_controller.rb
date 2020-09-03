@@ -31,7 +31,8 @@ class DimensionsController < ApplicationController
         authorize @dimension
     end     
 
+    private
     def dimension_params
-        params.require(:dimension).permit(:name, :description)
+        params.require(:dimension).permit(:name, :description, :photo)
     end    
 end

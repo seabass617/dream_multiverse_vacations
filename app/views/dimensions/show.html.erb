@@ -5,7 +5,7 @@
   <div style="display: flex;justify-content: space-between">
 
     <div class="seller" style="margin-right:20px">
-      <img src=<%= @dimension.user.photo %> class="avatar-large">
+      <%= cl_image_tag(@dimension.user.photo.key, options= {class: "avatar-large"}) %>
       <p><strong>Seller:</strong><br>
       <em><%= @dimension.user.first_name %> <%= @dimension.user.last_name %></em></p>
       <br>
@@ -13,7 +13,7 @@
     </div>
 
     <div style="flex-grow:1">
-      <img src=<%= @dimension.photo %> style="width: 100%;height:300px;border-radius: 20px"/>
+      <%= cl_image_tag @dimension.photo.key, height: 300, radius: "20:0" %>
     </div>
 
   </div>
