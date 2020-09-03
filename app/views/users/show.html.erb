@@ -1,4 +1,31 @@
+<div class="container" style="margin: 50px 0px;height: 400px;background-color:rgba(18,176,201,0.2);border-radius:10px;padding:10px 20px">
 
-<h1>Welcome to your new life <%=@user.first_name %>  <%=@user.last_name %> ! </h1>
-<%=@user.photo %>
+  <h1 style="text-align:right">Welcome <%= @user.first_name %>!</h1>
+  
+  <div style="display: flex;justify-content: space-between">
+
+
+    <% if @user.photo.present? %>
+        <div class="avatar-rotation">   
+            <img src=<%= @user.photo %> class="avatar-large">
+        </div>
+    <% else %>
+        <%= simple_form_for @user do |f| %>
+            <%= f.input :photo, as: :file %>
+            <%= f.button :submit, class: "btn" %>
+        <% end %>
+    <% end %>
+
+    <em><%= @user.first_name %> <%= @user.last_name %></em></p>
+
+
+  </div>
+
+
+  <div style="display: flex;justify-content: space-between">
+      <button class="btn"><%= link_to "Back", dimensions_path %>
+      <button class="btn"><%= link_to "Book", dimensions_path %>
+  </div>
+
+</div>
    
