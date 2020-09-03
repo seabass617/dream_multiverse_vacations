@@ -1,18 +1,26 @@
-<div class="container">
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-      <div class="card">
-        <%= booking.user.first_name %> <br>
-        <%= booking.trip_duration %> <br>
-        <%= booking.status %> <br>
-        <%= booking.dimension.name %> <br>
-        <%= booking.dimension.description %>
-        <%= link_to '❌', booking_path(booking.id), method: :delete, data: { confirm: 'Are you certain you want to delete this booking?'} %>
+ <h1 class="text-center title">Here are all your bookings</h1>
+ 
+<%# bookings container is going to hold all the bookings %>
+<div class="bookings-container">
+ 
+  <%# render each booking card %>
+  <% @bookings.each do |booking|%>
+    <%# this booking container is going to be a flexbox with info on the left & image on the right %>
+    <div class="booking-container"> 
+ 
+      <div class="booking-info">
+        <h2>Booking for <%= booking.dimension.name%></h2>
+        <h3>Duration: <%= "#{booking.trip_duration} years" %></h3>
+        <%# there will be an error below due to the path %>
+        <h3><%= link_to 'Cancel Booking', booking_path(booking.id), method: :delete, data: { confirm: 'Are you certain you want to delete this booking?'} %></h3>
       </div>
-      <% end %>
-
-  </div>
+ 
+ 
+      <img src= <%= booking.dimension.photo %> />
+    </div>
+ 
+  <%end%>
+ 
 </div>
-
 
 <%= link_to "back", dimensions_path %>
