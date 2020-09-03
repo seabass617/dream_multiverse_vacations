@@ -5,7 +5,10 @@
   <div style="display: flex;justify-content: space-between">
 
     <div class="seller" style="margin-right:20px">
-      <%= cl_image_tag(@dimension.user.photo.key, options= {class: "avatar-large"}) %>
+      <%= link_to user_path(@dimension.user.id) do %>
+        <%= cl_image_tag(@dimension.user.photo.key, options= {class: "avatar-large"}) %>
+      <% end %>
+
       <p><strong>Seller:</strong><br>
       <em><%= @dimension.user.first_name %> <%= @dimension.user.last_name %></em></p>
       <br>

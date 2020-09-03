@@ -5,15 +5,14 @@
   <%# navigation items %>
   <div class ="navigation">
     <ul id = "navigation-ul">
-      
       <li class = "navigation-li"><%= link_to "home", root_path %></li>
       <li class = "navigation-li"><%= link_to "my bookings", bookings_path %></li>
-      <li class = "navigation-li"><a href="#">my listings</a></li>
+      <li class = "navigation-li"><%= link_to "my listings", listings_path %></li>
       
       
   <%# avatar %>
       <li class="nav-item dropdown">
-          <% if current_user.photo.attached? %>
+          <% if current_user.photo.present? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
 
