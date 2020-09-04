@@ -1,0 +1,12 @@
+<%= simple_form_for dimension do |f| %>
+
+   <%= f.input :name %>
+   <%= f.input :description %>
+   <%= f.input :price %>
+   <%= f.input :photo, as: :file, class:"btn-buzz" %>
+    
+   <div class="form-actions">
+        <%= f.button :submit, class: "btn" %>
+   </div>
+
+<% end %>

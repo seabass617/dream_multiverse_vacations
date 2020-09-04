@@ -1,5 +1,8 @@
- <h1 class="text-center title">Your current dimension listings</h1>
- <div class="btn">Create a new dimension vacation!</div>
+<h1 class="text-center title">Your current dimension listings</h1>
+
+<%= link_to new_dimension_path do %>
+  <div class="btn">Create a new dimension vacation!</div>
+<% end %>
 <%# ************ NOTE *********************** %>
 <%# The class names are titled booking because this listing style is essentially %>
 <%# the same as looking at your bookings %>
@@ -26,4 +29,4 @@
  
 </div>
 
-<%= link_to "back", dimensions_path %>
+<button class="btn"><%= link_to "back", dimensions_path %></button>
