@@ -93,7 +93,7 @@ html.search(".category-page__member-link").each do |e|
 
   dimension_new = Dimension.create!(
     name: e.text.strip,
-    description: dimension_description,
+    description: "That's Right Morty! This is gonna be a lot like that. Except you know. It's gonna make sense. 'Quantum carburetor'? Jesus, Morty. You can't just add a Sci-Fi word to a car word and hope it means something... Huh, looks like something's wrong with the microverse battery. We're gonna have to go inside.",
     user_id: User.all.sample.id
   )
   dimension_new.photo.attach(io: open(images_url), filename: "dimension#{:id}.jpg")
