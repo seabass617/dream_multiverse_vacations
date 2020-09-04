@@ -8,16 +8,16 @@
     <%# this booking container is going to be a flexbox with info on the left & image on the right %>
     <div class="booking-container"> 
  
-      <div class="booking-info">
+      <div class="booking-info"style="width: 600px">
         <h2>Booking for <%= booking.dimension.name%></h2>
-        <h3><%= booking.dimension.description %></h3>
+        <p><%= booking.dimension.description %></p>
         <h4>Duration: <%= "#{booking.trip_duration} years" %></h4>
         <%# there will be an error below due to the path %>
-        <h5><%= link_to 'Cancel Booking', booking_path(booking.id), method: :delete, data: { confirm: 'Are you certain you want to delete this booking?'} %></h5>
+        <button class="btn"><%= link_to 'Cancel Booking', booking_path(booking.id), method: :delete, data: { confirm: 'Are you certain you want to delete this booking?'} %></button>
       </div>
  
  
-      <%= cl_image_tag booking.dimension.photo.key %>
+      <%= cl_image_tag booking.dimension.photo.key, style: "height: 200px;width: 400px; object-fit:cover;background-color:#d4ccbd" %>
 
     </div>
  
