@@ -20,7 +20,7 @@
     <%# AVATAR IMG %>
     <div style="margin-left:50px">
         <div class="avatar-rotation">   
-            <img src="" class="avatar-large">
+            <%= cl_image_tag(@user.photo.key, options= {class: "avatar-large"}) %>
         </div>
     </div>
 
