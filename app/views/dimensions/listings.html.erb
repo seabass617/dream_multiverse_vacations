@@ -21,8 +21,9 @@
         <h3><%= link_to 'Remove Dimension', dimension_path(dimension), method: :delete, data: { confirm: 'Are you certain you want to delete this dimension?'} %></h3>
       </div>
 
-
-      <%= cl_image_tag dimension.photo.key%>
+    <div style="height: 95%, width: 95%">
+      <%= cl_image_tag dimension.photo.key, style: "height: 100%; width: 100%;"%>
+    </div>
     </div>
  
   <%end%>
