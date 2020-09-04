@@ -55,7 +55,7 @@ user_summer.password = '123456'
 user_summer.password_confirmation = '123456'
 user_summer.bio = "boo-yah!!!"
 user_summer.save!
-user_summer.photo.attach(io: open('https://n7.nextpng.com/sticker-png/356/323/sticker-png-rick-sanchez-morty-smith-summer-smith-pocket-mortys-character-bolsonaro-purple-child-face-violet.png'), filename: 'summer.jpg')
+user_summer.photo.attach(io: open('https://rickandmortyfrases.com/wp-content/uploads/2020/02/beth-smith.png'), filename: 'summer.jpg')
 
 
 user_jerry = User.new
@@ -93,7 +93,7 @@ html.search(".category-page__member-link").each do |e|
 
   dimension_new = Dimension.create!(
     name: e.text.strip,
-    description: dimension_description,
+    description: "That's Right Morty! This is gonna be a lot like that. Except you know. It's gonna make sense. 'Quantum carburetor'? Jesus, Morty. You can't just add a Sci-Fi word to a car word and hope it means something... Huh, looks like something's wrong with the microverse battery. We're gonna have to go inside.",
     user_id: User.all.sample.id
   )
   dimension_new.photo.attach(io: open(images_url), filename: "dimension#{:id}.jpg")

@@ -1,6 +1,6 @@
 <div class="container" style="margin: 50px 0px;background-color:rgba(18,176,201,0.2);border-radius:10px;padding:10px 20px">
 
-  <h1 style="text-align:right"><%= @dimension.name %></h1>
+  <h1 class="call-to-action" style="text-align:right;margin-bottom:0px"><%= @dimension.name %></h1>
   
   <div style="display: flex;justify-content: space-between">
 
@@ -15,15 +15,13 @@
       <h1>$ <%= @dimension.price %></h1> 
     </div>
 
-    <div style="flex-grow:1">
-      <%= cl_image_tag @dimension.photo.key, height: 300, radius: "20:0" %>
-    </div>
+    <%= cl_image_tag @dimension.photo.key, style:"flex-grow:1; object-fit: cover;border-radius:30px 0px"%>
 
   </div>
 
   <div style="border-top: solid 1px white;padding-top: 20px;margin-top: 50px">
       <h4>Description:</h4>
-      <p>That's Right Morty! This is gonna be a lot like that. Except you know. It's gonna make sense. 'Quantum carburetor'? Jesus, Morty. You can't just add a Sci-Fi word to a car word and hope it means something... Huh, looks like something's wrong with the microverse battery. We're gonna have to go inside.</p>
+      <p><%= @dimension.description %></p>
   </div>
 
   <div style="display: flex;justify-content: space-between">

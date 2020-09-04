@@ -30,9 +30,10 @@
 </div>
 <% else %>
   <li class="nav-item" id="login">
-  <%= link_to new_user_session_path do %>
-    <i class="fas fa-user-astronaut"></i> Login
-  <%end%>
+    <i class="fas fa-user-astronaut"></i> 
+    <%= link_to "Login", new_user_session_path %>
+    /
+    <%= link_to "Signup", new_user_registration_path %>
   </li>
 <%end%>
 
