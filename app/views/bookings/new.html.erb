@@ -1,12 +1,11 @@
+<div class="container" style="margin-bottom: 50px">
+  <h1>Bookings</h1>
+  <% needs = ["Alcohol", "Cats", "Plumbus", "Portal gun", "Purgenol", "Death Crystal", "Eyeholes", "Fleeb", "Szechuan Chicken Mcnugget Sauce", "Kalaxian Crystals", "Schmeckles", "Neutrino Bomb"] %>
 
-<h1>Bookings</h1>
-<p>Here are your dimensions:</p>
-<% needs = ["Alcohol", "Cats", "Plumbus", "Portal gun", "Purgenol", "Death Crystal", "Eyeholes", "Fleeb", "Szechuan Chicken Mcnugget Sauce", "Kalaxian Crystals", "Schmeckles", "Neutrino Bomb"] %>
-
-<%= simple_form_for [@dimension, @booking] do |f| %>
-  <%= f.input :trip_duration, placeholder: "How much time?", label: "Quantity" %>
-  <%= f.input :special_needs, placeholder: "A Plumbus maybe?", label: "Do you have any special needs?", collection: needs.sort %>
-  <%= f.input :lugage, label: "Do you have any lugage besides your Morty?", as: :radio_buttons %>
-  <%= f.button :submit, :class => "btn btn-primary" %>
-<% end %>
-
+  <%= simple_form_for [@dimension, @booking] do |f| %>
+    <%= f.input :trip_duration, placeholder: "How much time?", label: "Quantity" %>
+    <%= f.input :special_needs, placeholder: "A Plumbus maybe?", label: "Do you have any special needs?", collection: needs.sort %>
+    <%= f.input :lugage, label: "Do you have any lugage besides your Morty?", as: :radio_buttons %>
+    <%= f.button :submit, class: "btn" %>
+  <% end %>
+</div>
