@@ -80,7 +80,7 @@ html.search(".category-page__member-link").each do |e|
   dimension_page = URI.encode("https://rickandmorty.fandom.com/wiki/#{e.text.strip}")
 
   if Nokogiri::HTML(open(dimension_page).read).at(".pi-image-thumbnail").nil?
-    images_url = "https://www.bringit.com.br/blog/wp-content/uploads/2016/11/banner_404.jpg"
+    images_url = "https://res.cloudinary.com/cassiaveliz/image/upload/v1599234410/404.png"
   else
     images_url = Nokogiri::HTML(open(dimension_page).read).at(".pi-image-thumbnail")['src']
   end
@@ -94,6 +94,7 @@ html.search(".category-page__member-link").each do |e|
   dimension_new = Dimension.create!(
     name: e.text.strip,
     description: "That's Right Morty! This is gonna be a lot like that. Except you know. It's gonna make sense. 'Quantum carburetor'? Jesus, Morty. You can't just add a Sci-Fi word to a car word and hope it means something... Huh, looks like something's wrong with the microverse battery. We're gonna have to go inside.",
+    price: rand(1000),
     user_id: User.all.sample.id
   )
   dimension_new.photo.attach(io: open(images_url), filename: "dimension#{:id}.jpg")

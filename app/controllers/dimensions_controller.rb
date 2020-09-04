@@ -2,7 +2,7 @@ class DimensionsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
 
     def index
-        @dimensions = Dimension.all
+        @dimensions = Dimension.all.order('name ASC')
     end   
     
     def listings
