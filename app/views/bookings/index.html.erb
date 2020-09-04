@@ -16,7 +16,8 @@
       </div>
  
  
-      <img src= <%= booking.dimension.photo %> />
+      <%= cl_image_tag booking.dimension.photo.key %>
+
     </div>
  
   <%end%>
@@ -24,4 +25,6 @@
   
 </div>
 
+
 <%= link_to "back", dimensions_path, class: "btn" %>
+

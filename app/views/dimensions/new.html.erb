@@ -1,8 +1,9 @@
-<div class="container">
- <%= simple_form_for @dimension do |f| %>
-   <%= f.input :name %>
-   <%= f.input :description %>
-    
- <%= f.submit %>
- <% end %>
+<div class="container" style="margin-bottom: 50px">
+
+  <h1 class="text-center title">Add a new Dimension</h1>
+
+  <%= render 'form', dimension: @dimension %>
+
+  <%= link_to "back to my listing", listings_path %>
+
 </div>

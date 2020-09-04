@@ -48,7 +48,7 @@ class DimensionsController < ApplicationController
     def destroy 
         @dimension = Dimension.find(params[:id])
         @dimension.destroy
-        redirect_to dimensions_path
+        redirect_to listings_path
     end 
 
 
