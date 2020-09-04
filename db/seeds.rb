@@ -55,7 +55,7 @@ user_summer.password = '123456'
 user_summer.password_confirmation = '123456'
 user_summer.bio = "boo-yah!!!"
 user_summer.save!
-user_summer.photo.attach(io: open('https://res.cloudinary.com/talaric0dev/image/upload/v1599232073/bcja99z953znik4b38d9cujpm0sk.png'), filename: 'summer.jpg')
+user_summer.photo.attach(io: open('https://rickandmortyfrases.com/wp-content/uploads/2020/02/beth-smith.png'), filename: 'summer.jpg')
 
 
 user_jerry = User.new
