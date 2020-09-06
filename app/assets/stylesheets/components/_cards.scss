@@ -1,18 +1,9 @@
-.cards-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 150px;
-  padding: 0;
-}
-
 .cards{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 50px;
   width: 100%;
 }
-
 
 @media(max-width: 992px) {
   .cards {
