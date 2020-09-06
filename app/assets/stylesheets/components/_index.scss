@@ -1,10 +1,17 @@
 // Import your components CSS files here.
+
+//page elements
+@import "header";
+@import "footer";
+@import "navbar";
+
+//other elements
 @import "alert";
 @import "avatar";
-@import "navbar";
-@import "glow";
-@import "form";
 @import "buttons";
 @import "card";
 @import "cards";
-@import "navigation";
+@import "form";
+
+//effects
+@import "glow";

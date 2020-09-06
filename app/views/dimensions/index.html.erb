@@ -4,20 +4,21 @@
   <%end%>
   <div class="cards">
     <% @dimensions.each do |dimension| %>
-    <%= link_to dimension do %>
-    <div class="card-trip">
-      <%= cl_image_tag(dimension.photo.key) %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= dimension.name %></h2>
-          <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
-          <%# <p><%= dimension.description %></p>
+      <%= link_to dimension do %>
+        <div class="card-trip">
+          <%= cl_image_tag(dimension.photo.key) %>
+          <div class="card-trip-infos">
+            <div>
+              <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
+              <h2><%= dimension.name %></h2>
+            </div>
+            <div class="card-trip-user">
+              <p><em><%= dimension.user.first_name %></em></p>
+              <%= cl_image_tag(dimension.user.photo.key, options= {class: "avatar-small"}) %>
+            </div>
+          </div>
         </div>
-        <%= cl_image_tag(dimension.user.photo.key, options= {class: "card-trip-user avatar-small"}) %>
-        <p><em><%= dimension.user.first_name %></em></p>
-      </div>
-    </div>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
