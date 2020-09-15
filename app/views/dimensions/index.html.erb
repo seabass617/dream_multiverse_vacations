@@ -6,7 +6,12 @@
     <% @dimensions.each do |dimension| %>
       <%= link_to dimension do %>
         <div class="card-trip">
-          <%= cl_image_tag(dimension.photo.key) %>
+          
+          <% if dimension.photo.present? %>
+            <%= cl_image_tag(dimension.photo.key) %>
+          <% end %>
+            
+          
           <div class="card-trip-infos">
             <div>
               <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>

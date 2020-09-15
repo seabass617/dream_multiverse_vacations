@@ -6,7 +6,7 @@
 <%# the same as looking at your bookings %>
 <%# ***************************************** %>
 <div class="container">
-  <div class="btn">Create a new dimension vacation!</div>
+  <%= link_to "Create a new dimension vacation!", new_dimension_path, class: "btn"  %>
   <br>
   
   <% @dimensions.each do |dimension|%>
@@ -20,9 +20,13 @@
         <button class="btn"><%= link_to 'Remove Dimension', dimension_path(dimension), method: :delete, data: { confirm: 'Are you certain you want to delete this dimension?'} %></button>
       </div>
 
-
-      <%= cl_image_tag dimension.photo.key, 
-          style: "height: 200px;width: 400px; object-fit:cover;background-color:#d4ccbd; border-radius:10px" %>
+      
+      <% if dimension.photo.present? %>
+        <%= cl_image_tag dimension.photo.key, 
+            style: "height: 200px;width: 400px; object-fit:cover;background-color:#d4ccbd; border-radius:10px" %>
+      <% end %>
+        
+      
     </div>
  
   <%end%>
