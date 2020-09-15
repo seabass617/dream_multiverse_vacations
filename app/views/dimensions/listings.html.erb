@@ -1,13 +1,13 @@
  <h1 class="text-center title">Your current dimension listings</h1>
  <%= link_to new_dimension_path do %>
-  <div class="btn">Create a new dimension vacation!</div>
 <% end %>
 <%# ************ NOTE *********************** %>
 <%# The class names are titled booking because this listing style is essentially %>
 <%# the same as looking at your bookings %>
 <%# ***************************************** %>
-<div class="bookings-container">
- 
+<div class="container">
+  <div class="btn">Create a new dimension vacation!</div>
+  <br>
   
   <% @dimensions.each do |dimension|%>
     
@@ -27,6 +27,5 @@
  
   <%end%>
  
+  <%= link_to "back", dimensions_path %>
 </div>
-
-<%= link_to "back", dimensions_path %>

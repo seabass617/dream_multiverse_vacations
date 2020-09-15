@@ -1,7 +1,7 @@
  <h1 class="text-center title">Here are all your bookings</h1>
  
 <%# bookings container is going to hold all the bookings %>
-<div class="bookings-container">
+<div class="container">
  
   <%# render each booking card %>
   <% @bookings.each do |booking|%>
@@ -27,6 +27,5 @@
   <h4 class="text-center title">Forever alone? 
         <u><b><em><%= link_to "Buy a Morty", "https://mortymarket.herokuapp.com/", target: "_blank" %></em></b></u> 
         and take him with you against his will!</h4>
-</div>
-
 <%= link_to "Back", dimensions_path, class: "btn" %>
+</div>
