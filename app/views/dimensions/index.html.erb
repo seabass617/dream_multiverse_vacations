@@ -19,7 +19,9 @@
             </div>
             <div class="card-trip-user">
               <p><em><%= dimension.user.first_name %></em></p>
-              <%= cl_image_tag(dimension.user.photo.key, options= {class: "avatar-small"}) %>
+              <% if dimension.photo.present? %>
+                <%= cl_image_tag(dimension.user.photo.key, options= {class: "avatar-small"}) %>
+              <% end %>
             </div>
           </div>
         </div>
