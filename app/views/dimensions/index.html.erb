@@ -14,6 +14,7 @@
             </div>
             <div class="card-trip-user">
               <p><em><%= dimension.user.first_name %></em></p>
+              <%# possible error location %>
               <%=if dimension.user.photo.key.attached? do %>
                 <%= cl_image_tag(dimension.user.photo.key, options= {class: "avatar-small"}) %>
               <%=end %>
