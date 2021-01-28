@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get 'user/show'
   devise_for :users
   root to: "dimensions#index"
-  get 'components', to: 'components#sandbox'
   get 'listings', to: 'dimensions#listings'
   get '/users/:id', to: "users#show", as: "user"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

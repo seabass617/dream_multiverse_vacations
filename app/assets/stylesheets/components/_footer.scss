@@ -1,0 +1,22 @@
+.footer {
+    background: rgba(0,0,0,.8);
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-top: 3px solid $green-yellow;
+}
+
+.footer p {
+    padding: 0px 10px;
+    margin: 0px;
+}
+
+.turbo-crew {
+    display: flex;
+    justify-content: center;
+}
+
+.turbo-crew a {
+    font-size: 12px;
+    text-decoration: none;
+}

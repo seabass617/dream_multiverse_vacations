@@ -1,15 +1,16 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Work Sans', 'Helvetica', 'sans-serif';
+$headers-font: 'Nunito', 'Helvetica', 'sans-serif';
 
 // To use a font file (.woff) uncomment following lines
 @font-face {
-  font-family: "Get Schwifty";
+  font-family: 'Get Schwifty';
   src: font-url('get_schwifty.ttf') format('truetype')
 }
-$rick-font: "Get Schwifty";
-$Raleway: 'Raleway'
+
+$rick-font: 'Get Schwifty';
+$raleway: 'Raleway'

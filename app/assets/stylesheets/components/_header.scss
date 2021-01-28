@@ -1,0 +1,12 @@
+.header{
+    color: $bone;
+    padding: 30px;
+    text-align: center;
+}
+
+.header a {
+    font-family: $rick-font;
+    color: $pacific-blue;
+    font-size: 80px;
+    -webkit-text-stroke: 1px $gray;
+}

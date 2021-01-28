@@ -1,41 +1,45 @@
-<% if user_signed_in? %>
+<div class="container">
 
-<div class="menu-bar">
+    <% if user_signed_in? %>
 
-  <%# navigation items %>
-  <div class ="navigation">
-    <ul id = "navigation-ul">
-      <li class = "navigation-li"><%= link_to "home", root_path %></li>
-      <li class = "navigation-li"><%= link_to "my bookings", bookings_path %></li>
-      <li class = "navigation-li"><%= link_to "my listings", listings_path %></li>
-      
-      
-  <%# avatar %>
-      <li class="nav-item dropdown">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <img src="https://res.cloudinary.com/cassiaveliz/image/upload/v1599165302/user_none.png" 
-                  class="avatar-small" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <% end %>
+    <div class="menu-bar">
 
-          <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "View profile", user_path(current_user.id), class: "dropdown-item" %>
-            <%= link_to "Edit profile", edit_user_registration_path(current_user.id), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+      <%# navigation items %>
+      <div class ="navigation">
+        <ul id = "navigation-ul">
+          <li class = "navigation-li"><%= link_to "home", root_path %></li>
+          <li class = "navigation-li"><%= link_to "my bookings", bookings_path %></li>
+          <li class = "navigation-li"><%= link_to "my listings", listings_path %></li>
+          
+          
+      <%# avatar %>
+          <li class="nav-item dropdown">
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <img src="https://res.cloudinary.com/cassiaveliz/image/upload/v1599165302/user_none.png" 
+                      class="avatar-small" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% end %>
+
+              <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "View profile", user_path(current_user.id), class: "dropdown-item" %>
+                <%= link_to "Edit profile", edit_user_registration_path(current_user.id), class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% else %>
+      <li class="nav-item" id="login">
+        <i class="fas fa-user-astronaut"></i> 
+        <%= link_to "Login", new_user_session_path %>
+        /
+        <%= link_to "Signup", new_user_registration_path %>
       </li>
-    </ul>
-  </div>
+    <%end%>
+
 </div>
-<% else %>
-  <li class="nav-item" id="login">
-    <i class="fas fa-user-astronaut"></i> 
-    <%= link_to "Login", new_user_session_path %>
-    /
-    <%= link_to "Signup", new_user_registration_path %>
-  </li>
-<%end%>
 
 
 
