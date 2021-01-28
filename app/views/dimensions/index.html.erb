@@ -13,7 +13,9 @@
           <h2 class="card-trip-pricing">$ <%= dimension.price %></h2>
           <%# <p><%= dimension.description %></p>
         </div>
-        <%= cl_image_tag(dimension.user.photo.key, options= {class: "card-trip-user avatar-small"}) %>
+        <% if dimension.user.photo.attached? do %>
+          <%= cl_image_tag(dimension.user.photo.key, options= {class: "card-trip-user avatar-small"}) %>
+        <% end %>
         <p><em><%= dimension.user.first_name %></em></p>
       </div>
     </div>
