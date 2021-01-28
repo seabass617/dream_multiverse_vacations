@@ -1,10 +1,11 @@
 <div class="container" style="margin-bottom: 50px">
-  <%unless user_signed_in?%>
-  <h1 class="text-center call-to-action">Browse through our wonderful selection of dimensions!</h1>
-  <%end%>
+  <% unless user_signed_in? %>
+    <h1 class="text-center call-to-action">Browse through our wonderful selection of dimensions!</h1>
+  <% end %>
+
   <div class="cards">
     <% @dimensions.each do |dimension| %>
-      <%= link_to dimension do %>
+      <% link_to dimension do %>
         <div class="card-trip">
           <%= cl_image_tag(dimension.photo.key) %>
           <div class="card-trip-infos">
@@ -14,14 +15,14 @@
             </div>
             <div class="card-trip-user">
               <p><em><%= dimension.user.first_name %></em></p>
-              <%# possible error location %>
-              <%=if dimension.user.photo.key.attached? do %>
-                <%= cl_image_tag(dimension.user.photo.key, options= {class: "avatar-small"}) %>
-              <%=end %>
+              <% if dimension.user.photo.attached? do %>
+                <%= cl_image_tag(dimension.user.photo.key, options={class: "avatar-small"}) %>
+              <% end %>
             </div>
           </div>
         </div>
       <% end %>
+    <% end %>
     <% end %>
   </div>
 </div>
